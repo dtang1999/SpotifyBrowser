@@ -1,0 +1,59 @@
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav #drawer class="sidenav" 
+      
+      >
+      <!-- fixedInViewport
+      *ngIf="isClosed"
+      [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+      [mode]="(isHandset$ | async) ? 'over' : 'side'"
+      [opened]="(isHandset$ | async) === false" -->
+    <mat-toolbar style="background-color: orange;">
+      Menu
+    </mat-toolbar>
+    <mat-nav-list>
+      <a mat-list-item href="http://localhost:4200/">Home</a>
+      <!-- <a mat-list-item href="#">Link 2</a>
+      <a mat-list-item href="#">Link 3</a> -->
+    </mat-nav-list>
+  </mat-sidenav>
+  
+  <mat-sidenav-content class="bg-dark">
+    <mat-toolbar style="background-color: orange;">
+      <button
+        type="button"
+        aria-label="Toggle sidenav"
+        mat-icon-button
+        (click)="drawer.toggle()">
+        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+      </button>
+      
+      <span>
+        <!-- modified -->
+        <nav class="navbar navbar-expand-lg sticky-top navbar-light">
+          <ul class="navbar-nav mr-auto ">
+            <li class="nav-item navbar-brand">
+              <a class="navbar-brand" href="/">
+                Browsing spotify
+              </a>
+            </li>
+          </ul>
+          <ul class="navbar-nav navbar-right mr-auto">
+            <li class="nav-item">
+              <a class="btn btn-dark" role="button" href="http://localhost:8888/login">Log in</a>
+            </li>
+          </ul>
+        </nav>
+
+      </span>
+    </mat-toolbar>
+    <!-- Add Content Here -->
+    <!-- <button (click)="callAboutMe()">side nav bar</button> -->
+    <div style="float: right">
+      <div [innerHTML]="gesture"></div>
+      <app-handtracker (onPrediction)="prediction($event)"></app-handtracker>
+    </div>
+
+    <router-outlet></router-outlet>
+
+  </mat-sidenav-content>
+</mat-sidenav-container>

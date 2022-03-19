@@ -1,0 +1,16 @@
+
+<!-- <div [innerHTML]="gesture"></div>
+<app-handtracker (onPrediction)="prediction($event)"></app-handtracker> -->
+
+<!--TODO: Define click callback to load about me information-->
+<button class="btn btn-light" (click)="aboutMe()">Load info about me</button>
+
+<!--TODO: replace ??? to bind to name-->
+<h3 style="color: white">Logged in user: {{ staticName }}</h3>
+<!--TODO: bind img src's to profile_pic-->
+<img [src]="staticPic">
+
+<p>
+	<!--TODO: bind link's href to profile_link-->
+	<a class="btn btn-light" target="_blank" [href]="staticLink">Open profile on Spotify</a>	
+</p>
